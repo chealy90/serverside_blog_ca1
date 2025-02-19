@@ -22,6 +22,9 @@ php artisan serve
 
 ## Before starting <br>
 Create a database <br>
+
+PALLET - https://coolors.co/050609-95190c-6d7275-fdfffc-f1d302
+
 ```
 mysql
 create database laravelblog;
