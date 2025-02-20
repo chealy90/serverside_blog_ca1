@@ -1,17 +1,42 @@
 @extends('layouts.app')
 
+
 @section('content')
-    <div class="background-image grid grid-cols-1 m-auto">
-        <div class="flex text-gray-100 pt-10">
-            <div class="m-auto pt-4 pb-16 sm:m-auto w-4/5 block text-center">
-                <h1 class="sm:text-white text-5xl uppercase font-bold text-shadow-md pb-14">
-                    Do you want to become a developer?
-                </h1>
-                <a 
-                    href="/blog"
-                    class="text-center bg-gray-50 text-gray-700 py-2 px-4 font-bold text-xl uppercase">
-                    Read More
-                </a>
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+
+    <div id="recentBlogPostsSection" class="container m-auto min-h-96 w-full">
+        <h2 class="p-100 ">Recent Blogposts</h2>
+        <div id="recentBlogPostsContainer" class="flex justify-around w-9/10 h-1/1">
+            <div class="blogCard block container max-w-sm h-80">
+                <div class="blogCardHeader w-full bg-red-700 h-20">
+                    <h3 >Title 1</h3>
+                    <p>20/02/2025</p>
+                </div>
+                <div class="blogCardContent">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                    </p>
+                </div>
+            </div>
+
+            <div class="blogCard block container max-w-sm h-80">
+                <div class="blogCardHeader w-full bg-red-700 h-20">
+                    <h3 >Title 2</h3>
+                    <p>15/02/2025</p>
+                </div>
+                <div class="blogCardContent">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                    </p>
+                </div>
+            </div>
+
+            <div class="blogCard block container max-w-sm h-80">
+                <div class="blogCardHeader w-full bg-red-700 h-20">
+                    <h3 >Title 3</h3>
+                    <p>10/02/2025</p>
+                </div>
+                <div class="blogCardContent">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo cumque sint, obcaecati voluptas consequuntur maxime, repudiandae commodi eaque eius laboriosam illo dolores! Voluptatem, rem. Illum nostrum</p>
+                </div>
             </div>
         </div>
     </div>
