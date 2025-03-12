@@ -13,6 +13,9 @@
                 <p>Published: 20/02/2025</p>
             </div>
         </div>
+
+        
+
         <div class="blogContent">
             Pure Chaos: My Night at a Pantera Concert
             I knew a Pantera concert would be intense, but nothing could’ve prepared me for the absolute onslaught of energy that hit the moment they took the stage. The second the first riff of Mouth for War ripped through the speakers, the entire crowd erupted—mosh pits opened, bodies crashed into each other, and I swear the floor shook under the weight of thousands losing their minds.
