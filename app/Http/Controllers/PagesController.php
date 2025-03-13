@@ -10,7 +10,7 @@ class PagesController extends Controller
 {
     public function index()
     {
-        $posts = Post::all(); // Fetch all posts
+        $posts = Post::take(3)->get(); // Fetch all posts
     
         return view('index', compact('posts'));
     }
