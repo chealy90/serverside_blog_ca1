@@ -8,7 +8,19 @@
         <h2 class="p-100 ">Recent Blogposts</h2>
         <div id="recentBlogPostsContainer" class="flex justify-around w-9/10 h-1/1">
             @foreach ($posts as $post)
-                @include('blog.blogCard', ['post' => $post])
+            <div class="blogCard block container max-w-sm h-80">
+                <div class="blogCardHeader w-full bg-red-700 h-20">
+                    <h3>{{$post->title}}</h3>
+                    <p>10/02/2025</p>
+                </div>
+                <div class="blogCardContent p-1">
+                    <p>{{$post->description}}
+                    </p>
+                </div>
+            
+            
+            
+            </div>  
             @endforeach
     </div>
 

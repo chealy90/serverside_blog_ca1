@@ -20,8 +20,8 @@ class PostsController extends Controller
      */
     public function index()
 {
-    $posts = Post::all();
-    return view('blog.index', compact('posts'));
+    $posts = Post::all(); // Fetch all posts
+    return view('blog.blogCard', compact('posts'));
 }
 
 
