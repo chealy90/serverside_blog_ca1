@@ -117,3 +117,115 @@
   .about-section a:hover {
     text-decoration: underline; /* Adds underline on hover */
   }
+
+
+
+/*    contact */
+  .contact-section {
+    color: #ddd;
+    padding: 60px 0;
+    max-width: 1200px; /* Limits the width for better readability */
+    margin: 0 auto; /* Centers the section horizontally */
+  }
+  
+  .contact-section h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .contact-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .contact-form div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90%;
+    margin: auto;
+  }
+
+  .contact-form .form-label {
+    margin-block: 25px 10px;
+  }
+  
+  .contact-form .form-control {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 1rem;
+    width: 80%;
+    color: #141414;
+  }
+  
+  .contact-form .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .contact-form button {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: auto;
+  }
+  
+  .contact-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .contact-info {
+    background-color: #f8f9fa;
+    color: #141414;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .contact-info h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .contact-info ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .contact-info ul li {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 10px;
+  }
+  
+  .contact-info a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+  
+  .social-links {
+    margin-top: 20px;
+  }
+  
+  .social-links .social-link {
+    display: inline-block;
+    margin-right: 10px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .social-links .social-link:hover {
+    text-decoration: underline;
+  }
