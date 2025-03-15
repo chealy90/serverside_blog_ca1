@@ -14,14 +14,19 @@ class BlogPostController extends Controller
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resourc.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('blog.blogPage');
-            
+    public function index($id)
+    {   
+        $post = Post::find($id);
+        return view('blog.blogPage', compact('post'));
+        
+    }
+
+    public function displayOne($id){
+        
     }
 
     
