@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $posts = Post::take(3)->get(); // Fetch all posts
+        return view('index', compact('posts'));
     }
 }
