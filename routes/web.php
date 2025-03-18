@@ -24,8 +24,8 @@ Route::resource('/blog', PostsController::class);
 Auth::routes();
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/blogs', [\App\Http\Controllers\BlogPagesAllController::class, 'index'])->name('blog');
-Route::get('/posts', [\App\Http\Controllers\PostController::class, 'index'])->name('blog.blogCard');
+Route::get('/blogs', [\App\Http\Controllers\BlogPagesAllController::class, 'index'])->name('blog.blogCard');
+//Route::get('/posts', [\App\Http\Controllers\PostController::class, 'index'])->name('blog.blogCard');
 Route::get('/about', [\App\Http\Controllers\AboutController::class, 'index'])->name('about');
 Route::get('/blogs/{id}', [\App\Http\Controllers\BlogPostController::class, 'index'])->name('blogs/display');
 

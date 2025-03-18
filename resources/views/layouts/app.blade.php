@@ -28,7 +28,7 @@
                     </a>
                 </div>
                 <nav class="space-x-4 text-gray-300 text-sm sm:text-base">
-                    <a class="no-underline hover:underline" href="/blog">Blog Posts</a>
+                    <a class="no-underline hover:underline" href="/blogs">Blog Posts</a>
                     <a class="no-underline hover:underline" href="/about">About</a>
                     <a class="no-underline hover:underline" href="/contact">Contact</a>
                     @guest
