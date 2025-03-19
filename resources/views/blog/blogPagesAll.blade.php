@@ -3,10 +3,16 @@
 @section('content')
 <div class="blog-card-container">
 
+  @auth
+  <button onClick=""><a href="/create">Create Blog</a></button>
+  @endauth
+
+
     @foreach($posts as $post)
     <!-- Thumbnail Image -->
     <div class="blog-card-thumbnail">
-      <img src={{ $post->image_path }} alt="Blog Post Thumbnail">
+      
+      <img src="{{ asset('images/' . $post->image_path) }}" alt="Blog Post Thumbnail">
     </div>
   
     <!-- Blog Content -->
