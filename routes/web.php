@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\BlogPagesAllController;
+use App\Http\Controllers\UserController;
 
 
 /*
@@ -35,6 +36,10 @@ Route::get('/contact', [\App\Http\Controllers\ContactController::class, 'index']
 
 
 Route::get('/create', [\App\Http\Controllers\BlogPostController::class, 'create'])->name('create');
+
+
+
+Route::get('/profile', [UserController::class, 'showProfile'])->name('showProfile');
 
 
 
