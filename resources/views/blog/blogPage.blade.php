@@ -18,7 +18,7 @@
 
         <div class="blogContent">
             <p>{{ $post->description }}</p>
-            <img src={{ e($post->image_path) }} alt="post image"/>
+            <img src={{ asset('images/' . $post->image_path) }} alt="post image"/>
         </div>
     </div>
 

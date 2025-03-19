@@ -8,9 +8,20 @@ use Cviebrock\EloquentSluggable\Sluggable;
 
 class Post extends Model
 {
+    use Sluggable;
     use HasFactory;
 
     protected $fillable = ['title', 'description', 'image_path', 'user_id'];
+
+
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'title' // The field to generate the slug from (e.g., title)
+            ]
+        ];
+    }
 
 
 
