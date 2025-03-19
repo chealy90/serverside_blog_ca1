@@ -107,8 +107,13 @@
             @foreach ($posts as $post)
                 <div>
                     <p>POST: {{ $post->title }}</p>
-                    <button>Edit</button>
-                    <button>Delete</button>
+                    <form action="{{ route('deletePost', $post->id) }}" method="POST" class="inline">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition duration-300">
+                            Delete Post
+                        </button>
+                    </form>
                 </div>
             @endforeach
         </div>

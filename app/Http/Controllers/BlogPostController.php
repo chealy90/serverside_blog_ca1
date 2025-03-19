@@ -148,12 +148,12 @@ class BlogPostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($slug)
+    public function destroy($id)
     {
-        $post = Post::where('slug', $slug);
+        $post = Post::where('id', $id);
         $post->delete();
 
-        return redirect('/blog')
+        return redirect('/profile')
             ->with('message', 'Your post has been deleted!');
     }
 }
