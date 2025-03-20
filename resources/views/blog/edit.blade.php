@@ -23,7 +23,7 @@
 
 <div class="w-4/5 m-auto pt-20">
     <form 
-        action="/blog/{{ $post->slug }}"
+        action="/commitEdit/{{ $post->id }}"
         method="POST"
         enctype="multipart/form-data">
         @csrf
@@ -39,6 +39,11 @@
             name="description"
             placeholder="Description..."
             class="py-20 bg-transparent block border-b-2 w-full h-60 text-xl outline-none">{{ $post->description }}</textarea> 
+
+        <input
+            type="file"
+            name="image"
+        />
 
         <button    
             type="submit"

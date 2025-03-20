@@ -110,10 +110,10 @@ class BlogPostController extends Controller
      * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
-    public function edit($slug)
+    public function edit($id)
     {
         return view('blog.edit')
-            ->with('post', Post::where('slug', $slug)->first());
+            ->with('post', Post::where('id', $id)->first());
     }
 
     /**
@@ -123,22 +123,64 @@ class BlogPostController extends Controller
      * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $slug)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'title' => 'required',
             'description' => 'required',
         ]);
 
-        Post::where('slug', $slug)
+        //move image
+        // Define the directory using public_path()
+    $directory = public_path('images');
+    
+
+    // Ensure the directory exists
+    if (!file_exists($directory)) {
+        mkdir($directory, 0755, true); // Create directory with proper permissions
+    }
+
+    // Check if the directory is writable
+    if (!is_writable($directory)) {
+        Log::error("Directory is not writable: " . $directory);
+        return redirect()->back()->with('error', 'The images directory is not writable.');
+    }
+
+    // Generate a unique file name
+    if ($request->hasFile('image')){
+        $newImageName = uniqid() . '-' . $request->title . '.' . $request->image->extension();
+
+    }
+    //dd($directory);
+
+    //dd($request->file('image'));
+    // Move the uploaded file to the directory
+    try {
+        if ($request->hasFile('image')){
+            $request->image->move($directory, $newImageName);
+        }
+    } catch (\Exception $e) {
+        Log::error("File upload failed: " . $e->getMessage());
+        return redirect()->back()->with('error', 'File upload failed.');
+    }
+    
+
+    
+
+        Post::where('id', $id)
             ->update([
                 'title' => $request->input('title'),
                 'description' => $request->input('description'),
                 'slug' => SlugService::createSlug(Post::class, 'slug', $request->title),
-                'user_id' => auth()->user()->id
+                'user_id' => auth()->user()->id,
+                'image_path' => $request->hasFile('image') 
+                    ? $newImageName
+                    : Post::where('id', $id)->value('image_path') // Keep existing image
             ]);
 
-        return redirect('/blog')
+        //dd("here");
+
+        return redirect('/profile')
             ->with('message', 'Your post has been updated!');
     }
 

@@ -105,16 +105,25 @@
 
         <div class="bg-white rounded-lg shadow-lg p-6">
             @foreach ($posts as $post)
-                <div>
-                    <p>POST: {{ $post->title }}</p>
-                    <form action="{{ route('deletePost', $post->id) }}" method="POST" class="inline">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition duration-300">
-                            Delete Post
-                        </button>
-                    </form>
-                </div>
+            <div>
+                <p>POST: {{ $post->title }}</p>
+            
+                <!-- Delete Post Form -->
+                <form action="{{ route('deletePost', ['id' => $post->id]) }}" method="POST" class="inline">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition duration-300">
+                        Delete Post
+                    </button>
+                </form>
+            
+                <!-- Edit Post Form -->
+                <form action="{{ route('editPost', ['id' => $post->id]) }}" method="GET" class="inline">
+                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300">
+                        Edit Post
+                    </button>
+                </form>
+            </div>
             @endforeach
         </div>
     </div>
