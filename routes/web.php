@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\BlogPagesAllController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\BlogPostController;
 
 
 /*
@@ -35,6 +37,13 @@ Route::get('/contact', [\App\Http\Controllers\ContactController::class, 'index']
 
 
 Route::get('/create', [\App\Http\Controllers\BlogPostController::class, 'create'])->name('create');
+Route::delete('/deletePost/{id}', [BlogPostController::class, 'destroy'])->name('deletePost');
+Route::get('/editPost/{id}', [BlogPostController::class, 'edit'])->name('editPost');
+Route::put('/commitEdit/{id}', [BlogPostController::Class, 'update'])->name('commitEdit');
+
+
+
+Route::get('/profile', [UserController::class, 'showProfile'])->name('showProfile');
 
 
 
