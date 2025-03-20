@@ -3,18 +3,17 @@
 
 @section('content')
 <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-<div class="blogCard block container max-w-sm h-80">
-    <div class="blogCardHeader w-full bg-red-700 h-20">
-        <h3>{{$post->title}}</h3>
-        <p>10/02/2025</p>
+<div class="blogCard card h-100 shadow">
+    <img src={{ asset('images/' . $post->image_path) }} class="card-img-top" alt="Blog Image">
+    <div class="card-body">
+        <div class="blogCardHeader bg-red-700 text-white p-3">
+            <h3 class="card-title">{{$post->title}}</h3>
+            <p class="card-subtitle mb-2 text-white-50">{{ $post->created_at }}</p>
+        </div>
+        <div class="blogCardContent p-3">
+            <p class="card-text">{{$post->description}}</p>
+        </div>
     </div>
-    <div class="blogCardContent p-1">
-        <p>{{$post->description}}
-        </p>
-    </div>
-
-
-
-</div>  
+</div>
 
 @endsection
