@@ -48,6 +48,9 @@ class DatabaseSeeder extends Seeder
             'user_id' => 7
         ]);
 
+
+        /*
+
         Post::create([
             'title' => "Front Row at a Slayer Farewell Show",
             'slug' => "test",

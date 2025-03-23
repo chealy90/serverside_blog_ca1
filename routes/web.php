@@ -37,6 +37,8 @@ Route::get('/contact', [\App\Http\Controllers\ContactController::class, 'index']
 
 
 Route::get('/create', [\App\Http\Controllers\BlogPostController::class, 'create'])->name('create');
+Route::put('/createPost', [BlogPostController::class, 'store'])->name('createPost');
+
 Route::delete('/deletePost/{id}', [BlogPostController::class, 'destroy'])->name('deletePost');
 Route::get('/editPost/{id}', [BlogPostController::class, 'edit'])->name('editPost');
 Route::put('/commitEdit/{id}', [BlogPostController::Class, 'update'])->name('commitEdit');

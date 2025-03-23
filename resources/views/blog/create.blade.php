@@ -14,7 +14,7 @@
         </div>
     @endif
 
-    <form class="form" action="/create" method="POST" enctype="multipart/form-data">
+    <form class="form" action="/createPost" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
