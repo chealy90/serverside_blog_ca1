@@ -1,6 +1,4 @@
-## Laravel 8 Complete Blog
-
-This repository is linked to [this youtube video](https://www.youtube.com/watch?v=HKJDLXsTr8A&t=4710s) where I show you how to create a complete blog in Laravel 8 using best practices.
+## CA2 - Laravel Blog
 
 •	**Author: Christopher Healy**
 
@@ -11,8 +9,8 @@ This repository is linked to [this youtube video](https://www.youtube.com/watch?
 ## Usage <br>
 Setting up your development environment on your local machine: <br>
 ```
-git clone git@github.com:codewithdary/laravel-8-complete-blog.git
-cd laravel-8-complete-blog
+git clone https://github.com/chealy90/serverside_blog_ca1
+cd serverside_blog_ca1
 cp .env.example .env
 composer install
 php artisan key:generate
@@ -23,7 +21,6 @@ php artisan serve
 ## Before starting <br>
 Create a database <br>
 
-PALLET - https://coolors.co/050609-95190c-6d7275-fdfffc-f1d302
 
 ```
 mysql
@@ -37,8 +34,8 @@ DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=laravelblog
-DB_USERNAME={USERNAME}
-DB_PASSWORD={PASSWORD}
+DB_USERNAME=root
+DB_PASSWORD=root
 ```
 
 Migrate the tables
@@ -46,5 +43,21 @@ Migrate the tables
 php artisan migrate
 ```
 
-## Contributing
-Do not hesitate to contribute to the project by adapting or adding features ! Bug reports or pull requests are welcome.
+## Usage:
+As a guest users can view any blog post.
+The blog cards on the homepage will lead to the three most recent blogs, or else all blogs can be found by clicking on the "blogs" tab.
+
+# Logging in
+Users can log in by following the call to action on the home page, or by clicking the "log in" tab in the nav bar.
+The site has 2 default users:
+- email: johndoe@gmail.com, password: randomPassword
+- email: janedoe@gmail.com, password: randomPassword
+
+Alternatively, you can register as a new user on the "register" tab, where you will be logged in as soon as you create an account.
+
+# Creating Blogs:
+Once logged in, the user will see a "Create New" option appear on the blog page, following this, users can create a new blog post.
+Fill in the fields, and press "Create".
+
+# Profile Section:
+On the profile page, users can edit their profile information, including a profile picture, password changes, and edit or delete their blog posts.
