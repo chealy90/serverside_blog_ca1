@@ -56,7 +56,7 @@
             <h2 class="cta-title">Start Sharing Your Ideas</h2>
             <p class="cta-text">Create a new post and let your voice be heard.</p>
             <div class="cta-buttons">
-                <a href="{{ route('createPost') }}" class="button">Create a Post</a>
+                <a href="{{ route('create') }}" class="button">Create a Post</a>
             </div>
         @endguest
     </div>
