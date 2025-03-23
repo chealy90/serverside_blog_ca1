@@ -122,7 +122,7 @@
             <h2>My Posts</h2>
             @foreach ($posts as $post)
                 <div class="post-item">
-                    <p class="post-title">POST: {{ $post->title }}</p>
+                    <p class="post-title">{{ $post->title }}</p>
         
                     <div class="post-actions">
                         <!-- Delete Post Form -->
