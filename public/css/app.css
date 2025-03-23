@@ -40483,6 +40483,59 @@ body {
   background-color: #666;
 }
 
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 60vh; /* Adjust height as needed */
+  background-position:  center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+}
+
+.hero-content {
+  position: relative; /* Ensures text is above the overlay */
+  max-width: 800px;
+  z-index: 1;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hero-text {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.hero-link {
+  color: #ffd700; /* Gold for contrast */
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.hero-link:hover {
+  color: #ffcc00; /* Slightly lighter gold on hover */
+}
+
 #recentBlogPostsSection {
   padding: 50px 5%;
   text-align: center;
@@ -40501,6 +40554,59 @@ body {
   gap: 25px;
   justify-content: center;
   padding: 0 20px;
+}
+
+.cta-section {
+  text-align: center;
+  background: #666;
+  color: white;
+  padding: 60px 20px;
+  border-radius: 12px;
+  margin: 50px auto;
+  max-width: 800px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cta-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #b91c1c;
+  margin-bottom: 10px;
+}
+
+.cta-text {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.button {
+  background-color: #b91c1c;
+  color: white;
+  font-size: 1rem;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: #a31616; /* Darker red for hover */
+}
+
+.button-secondary {
+  background-color: #d9a71c; /* Gold-like color for contrast */
+}
+
+.button-secondary:hover {
+  background-color: #c08e18; /* Darker gold on hover */
 }
 
 /* Blog Card Styling */

@@ -5,7 +5,24 @@
     
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/tailwind.css') }}" rel="stylesheet">  
+    <link href="{{ asset('css/tailwind.css') }}" rel="stylesheet">
+    
+    <div class="hero-section" style="background-image: url('{{ asset('images/singing.jpg') }}');">
+        <div class="hero-overlay"></div> <!-- Semi-transparent overlay -->
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to Louder Inc.</h1>
+            <p class="hero-text">
+                Discover, share, and engage with amazing content. Whether you're here to read, write, or connect over music, you've come to the right place.  
+                <a href="{{ route('about') }}" class="hero-link">Learn more about us →</a>
+            </p>
+        </div>
+    </div>
+    
+    
+    
+
+
+
     <div id="recentBlogPostsSection">
         <h2>Recent Blogposts</h2>
         <div id="recentBlogPostsContainer" class="flex justify-around">
@@ -25,23 +42,25 @@
             </a>
             @endforeach
     </div>
+        
 
-
-    <div>
-        <h3>
-            Keep up with recent music news!
-        </h3>
-        <iframe src="https://www.instagram.com/loudwire/" style="border:0px #ffffff none;" name="instagramIFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="600px" width="800px" allowfullscreen>
-            </iframe>
-            <div style="overflow: auto; position: absolute; height: 0pt; width: 0pt;">
+    <div class="cta-section">
+        @guest
+            <h2 class="cta-title">Join Our Community</h2>
+            <p class="cta-text">Sign up today to share your thoughts with the world.</p>
+            <div class="cta-buttons">
+                <a href="{{ route('login') }}" class="button">Log In</a>
+                <a href="{{ route('register') }}" class="button button-secondary">Register</a>
             </div>
-            <div style="overflow: auto; position: absolute; height: 0pt; width: 0pt;"><a href="https://www.embedista.com/">Iframe Generator</a></div><script type="text/javascript" src="https://www.embedista.com/j/if.js"></script> </div><style>.boxes2{height:212px;width:316px;} #new img{max-width:none!important;background:none!important}#iframe{max-height:none!important;max-width:none!important;background:none!important}</style></div>
+        @else
+            <h2 class="cta-title">Start Sharing Your Ideas</h2>
+            <p class="cta-text">Create a new post and let your voice be heard.</p>
+            <div class="cta-buttons">
+                <a href="{{ route('createPost') }}" class="button">Create a Post</a>
+            </div>
+        @endguest
     </div>
-
-    <div>
-        <h3>Ready to share your latest experience?</h3>
-        <button type="button">Add a blog</button>
-    </div>
+    
 
     
 
