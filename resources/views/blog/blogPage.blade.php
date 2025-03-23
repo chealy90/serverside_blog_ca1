@@ -8,7 +8,7 @@
             <h2>{{$post->title  }}</h2>
 
             <div class="blogInfo">
-                <p></p>
+                <p>Author: {{ App\Models\User::find($post->user_id)->name }}</p>
                 <p>Published: {{ $post->created_at }}</p>
             </div>
         </div>

@@ -44,6 +44,7 @@ Route::put('/commitEdit/{id}', [BlogPostController::Class, 'update'])->name('com
 
 
 Route::get('/profile', [UserController::class, 'showProfile'])->name('showProfile');
+Route::put('/commitEditProfile/{id}', [UserController::class, 'update'])->name('profileUpdate');
 
 
 
