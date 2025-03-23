@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mx-auto p-4">
+<div class="container mx-auto p-4 text-gray-800">
     <!-- Profile Card -->
     <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
         <!-- Profile Header -->
@@ -118,29 +118,33 @@
         </div>
 
 
-        <div class="bg-white rounded-lg shadow-lg p-6">
+        <div class="post-container">
+            <h2>My Posts</h2>
             @foreach ($posts as $post)
-            <div>
-                <p>POST: {{ $post->title }}</p>
-            
-                <!-- Delete Post Form -->
-                <form action="{{ route('deletePost', ['id' => $post->id]) }}" method="POST" class="inline">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition duration-300">
-                        Delete Post
-                    </button>
-                </form>
-            
-                <!-- Edit Post Form -->
-                <form action="{{ route('editPost', ['id' => $post->id]) }}" method="GET" class="inline">
-                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300">
-                        Edit Post
-                    </button>
-                </form>
-            </div>
+                <div class="post-item">
+                    <p class="post-title">POST: {{ $post->title }}</p>
+        
+                    <div class="post-actions">
+                        <!-- Delete Post Form -->
+                        <form action="{{ route('deletePost', ['id' => $post->id]) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition duration-300">
+                                Delete Post
+                            </button>
+                        </form>
+        
+                        <!-- Edit Post Form -->
+                        <form action="{{ route('editPost', ['id' => $post->id]) }}" method="GET">
+                            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300">
+                                Edit Post
+                            </button>
+                        </form>
+                    </div>
+                </div>
             @endforeach
         </div>
+        
     </div>
 </div>
 

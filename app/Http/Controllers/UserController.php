@@ -46,12 +46,6 @@ class UserController extends Controller
             //dd($newImageName);
 
             $directory = public_path('images');
-    
-
-            // Ensure the directory exists
-            if (!file_exists($directory)) {
-                mkdir($directory, 0755, true); // Create directory with proper permissions
-            }
 
             // Check if the directory is writable
             if (!is_writable($directory)) {
@@ -60,8 +54,8 @@ class UserController extends Controller
             }
 
             try {
-                if ($request->hasFile('image')){
-                    $request->image->move($directory, $newImageName);
+                if ($request->hasFile('profile_picture')) {
+                    $request->profile_picture->move($directory, $newImageName);
                 }
             } catch (\Exception $e) {
                 Log::error("File upload failed: " . $e->getMessage());

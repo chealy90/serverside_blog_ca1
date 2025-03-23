@@ -1,14 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+<!-- Create Blog Button -->
+@auth
+<div class="create-blog-container">
+    <a href="/create" class="create-blog-button">+ Create Blog</a>
+</div>
+@endauth
 <div class="blog-card-container">
 
-    <!-- Create Blog Button -->
-    @auth
-    <div class="create-blog-container">
-        <a href="/create" class="create-blog-button">+ Create Blog</a>
-    </div>
-    @endauth
+    
 
     <!-- Blog Cards -->
     @foreach($posts as $post)
@@ -35,7 +36,7 @@
         
             <!-- Metadata (Author and Date) -->
             <div class="blog-card-meta">
-                <span class="blog-card-author">By John Doe</span>
+                <span class="blog-card-author">By {{  App\Models\User::find($post->user_id)->name  }}</span>
                 <span class="blog-card-date">{{ $post->created_at->format('M d, Y') }}</span>
             </div>
         
