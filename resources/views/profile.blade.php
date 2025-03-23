@@ -14,7 +14,7 @@
             <div class="flex flex-col items-center space-y-4">
                 <!-- Profile Picture -->
                 <img 
-                    src="{{ asset('images/profile-picture.jpg') }}" 
+                    src="{{ asset('images/' . auth()->user()->profile_picture) }}"
                     alt="Profile Picture" 
                     class="w-32 h-32 rounded-full border-4 border-white shadow-lg"
                 >
@@ -42,7 +42,21 @@
         <!-- Settings -->
         <div class="bg-white rounded-lg shadow-lg p-6">
             <h3 class="text-xl font-semibold text-gray-800 mb-4">Settings</h3>
-            <form >
+            @if (session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+            @endif
+
+            @if (session('message'))
+                <div class="alert alert-success">
+                    {{ session('message') }}
+                </div>
+            @endif
+            <form action="{{ route('profileUpdate', auth()->id()) }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
+            
                 <div class="mb-4">
                     <label for="email" class="block text-gray-700">Email</label>
                     <input 
@@ -85,10 +99,6 @@
                 </div>
 
                 <div class="mb-4">
-                    <img 
-                        src="{{ asset('images/profile-picture.jpg') }}" 
-                        alt="Profile Picture" 
-                        class="w-32 h-32 rounded-full border-4 border-white shadow-lg"/>
                     <label for="profile_picture" class="block text-gray-700">Profile Picture</label>
                     <input 
                         type="file" 
